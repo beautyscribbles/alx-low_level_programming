@@ -1,28 +1,22 @@
-#include "main.h"
-
 /**
- *_strcat - Concatenates the string pointed to by @src,
- *          to the end of the string pointed to by @dest.+ terminating null byt
- *          at the end
- * @dest: pointer to the string to be concatenated upon.
- * @src: pointer to source string to be appended to @dest.
- *
- * Return: Points to the destination string @dest.
+ * _strncat - joins the two strings
+ * @dest: it is the pointer to the destination string
+ * @src: it is the pointer to the source string
+ * @n: maximum number of bytes to be used from src
+ * by flh6
+ * Return: pointer to the resulting string dest
  */
-
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int aray = 0, d_count = 0;
+int dest_len = 0, i;
 
-	while (dest[aray++])
-	{
-		d_count++;
-	}
+/*To search for the length of dest */
+while (dest[dest_len] != '\0')
+dest_len++;
+/* Concatenates the @src to @dest */
+for (i = 0; i < n && src[i] != '\0'; i++)
+dest[dest_len + i] = src[i];
+dest[dest_len + i] = '\0';
 
-	for (aray = 0; src[aray]; aray++)
-	{
-		dest[d_count++] = src[aray];
-	}
-
-	return (dest);
+return (dest);
 }
