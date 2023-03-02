@@ -1,24 +1,33 @@
-#include <main.h>
+#include "main.h"
 /**
- * rot13 - Encodes a string using rot13
- * @str: The string to encode
+ *rot13 - encodes strings using rot13.
+ *@s: pointer to string.
  *
- * Return: A pointer to the encoded string
+ *Return: pointer to encoded string.
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-int i, j;
-char *result = str;
-for (i = 0; str[i] != '\0'; i++)
+int stringCount, rotation;
+char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z'};
+char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M'};
+for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 {
-if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+for (rotation = 0; rotation < 53; rotation++)
 {
-result[i] = str[i] + 13;
+if (r1[rotation] == s[stringCount])
+{
+s[stringCount] = r2[rotation];
+break;
 }
-else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-{
-result[i] = str[i] - 13;
 }
 }
-return (result);
+return (s);
 }
