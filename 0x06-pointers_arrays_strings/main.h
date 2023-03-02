@@ -1,6 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
-
+/**
+ * This a header file containing declarations
+ * for prototype functions defined in the 0x06-more-functions_nested_loops
+ * Inserting the file's content within ifndef, define and endif,
+ * entails that the the compiler will not process the file twice if its included twice.
+*/
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
 char *_strncpy(char *dest, char *src, int n);
