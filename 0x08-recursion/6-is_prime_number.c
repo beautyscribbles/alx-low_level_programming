@@ -1,30 +1,33 @@
 #include "main.h"
 
 /**
- * * find_root - find square root of n, starting from the smallest possible, 0
- * * @n: n
- * * @root: test this root
- * * Return: natural square root, or -1 if not natural root
+ * * is_prime - recursively divide by higher divisor, skip even nums
+ * * @n: number to check if prime
+ * * @divisor: divisor
+ * * Return: 1 if prime, 0 if not, or recursive function call
 */
 
-int find_root(int n, int root)
+int is_prime(int n, int divisor)
 {
-if (root * root > n)
-return (-1);
-if (root * root == n)
-return (root);
-return (find_root(n, root + 1));
+if (n == divisor)
+return (1);
+if (n % divisor == 0)
+return (0);
+return (is_prime(n, divisor + 1));
 }
 
 /**
- * * _sqrt_recursion - find natural square root of n
- * * @n: n
- * * Return: natural square root, or -1 if not natural root
+ * * is_prime_number - check if prime
+ * * @n: number to check
+ * * Return: 1 if prime, 0 if not
 */
 
-int _sqrt_recursion(int n)
+int is_prime_number(int n)
 {
-if (n < 0)
-return (-1);
-return (find_root(n, 0));
+int divisor = 3;
+if (n % 2 == 0 || n < 2)
+return (0);
+if (n == 2)
+return (1);
+return (is_prime(n, divisor));
 }
