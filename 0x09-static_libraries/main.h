@@ -3,7 +3,7 @@
 
 /*
  * File: main.h
- * Auth: Karlie Moyo
+ * Auth: Florence Hanson
  * Desc: Header file containing the prototypes of all functions
  *       included in the static library libholberton.a.
  */
