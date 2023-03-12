@@ -12,13 +12,14 @@ This project is on low level programming languages particularly on C
 </p>
 <h4><p>The use of various functions such as _putchar and much more with the use of nested loops (-loops inside a loop) in 0x02-functions_nested_loops</p> </h4> 
 <h4><p>Fixing code bugs in 0x03-debugging directory </p> </h4>
-<h4><p>
-Nested while loops
-C - Functions
-Learning to Program in C (Part 06) (stop at 14:00)
-What is the purpose of a function prototype?
-C - Header Files 
-Learning Objectives in 0x04-more_functions_nested_loops </p></h4>
+<h4>
+<p>
+Nested while loops</p>
+<p> C - Functions </p>
+<p>Learning to Program in C (Part 06) (stop at 14:00) </p>
+ <p>What is the purpose of a function prototype? </p>
+ <p>C - Header Files </p>
+<p> Learning Objectives in 0x04-more_functions_nested_loops </p></h4>
 <h4></h4>
 <h4></h4>
 <h4></h4>
