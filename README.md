@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 This project is on low level programming languages particularly on C
 =======
 <h1> 🅰️<em>L</em>✖️ Low Level Programming </h1>
@@ -12,4 +12,11 @@ This project is on low level programming languages particularly on C
 </p>
 <h4><p>The use of various functions such as _putchar and much more with the use of nested loops (-loops inside a loop) in 0x02-functions_nested_loops</p> </h4> 
 <h4><p>Fixing code bugs in 0x03-debugging directory </p> </h4>
->>>>>>> 7ae9389e67a004aa0938d6dc2407d8e862f7e727
+<h4></h4>
+<h4></h4>
+<h4></h4>
+<h4></h4>
+<h4></h4>
+<h4></h4>
+<h4></h4>
+
