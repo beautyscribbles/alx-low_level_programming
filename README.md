@@ -15,7 +15,7 @@
 <p>
 Nested while loops</p>
 <p> <h5>C - Functions </p>
-<p>Learning to Program in C (Part 06) (stop at 14:00) </p>
+<p>Learning to Program in C (Part 06) (stop at 1</p>
  <p>What is the purpose of a function prototype? </p>
  <p>C - Header Files </p>
 <p> Learning Objectives in 0x04-more_functions_nested_loops </h5></p></h4>
