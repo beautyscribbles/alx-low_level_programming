@@ -1,5 +1,4 @@
 
-ALX low level programming languages on C
 =======
 <h1> 🅰️<em>L</em>✖️ Low Level Programming </h1>
 <p> This task for the <em>Holberton's  
@@ -15,11 +14,11 @@ ALX low level programming languages on C
 <h4>
 <p>
 Nested while loops</p>
-<p> C - Functions </p>
+<p> <h3>C - Functions </p>
 <p>Learning to Program in C (Part 06) (stop at 14:00) </p>
  <p>What is the purpose of a function prototype? </p>
  <p>C - Header Files </p>
-<p> Learning Objectives in 0x04-more_functions_nested_loops </p></h4>
+<p> Learning Objectives in 0x04-more_functions_nested_loops </h3></p></h4>
 <h4></h4>
 <h4></h4>
 <h4></h4>
