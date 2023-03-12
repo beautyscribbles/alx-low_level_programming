@@ -1,5 +1,5 @@
 
-This project is on low level programming languages particularly on C
+ALX low level programming languages on C
 =======
 <h1> 🅰️<em>L</em>✖️ Low Level Programming </h1>
 <p> This task for the <em>Holberton's  
