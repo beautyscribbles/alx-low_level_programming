@@ -1,18 +1,16 @@
 #include "lists.h"
-
 /**
- * sum_listint - returns the sum of all the data (n) of a listint_t list.
- * @head input
- * Return: sum of all data in the list, 0 if the lost is empty.
-**/
-int sum_listint(listint_t *head)
+ *  * sum_listint - sum all all the data (n) of a linked list
+ *   * @head: input
+ *    * Return: summation of all node values
+*/
+int sum_listint(listint_t *head)/*Prototype*/
 {
-listint_t *node = head;
-int plus = 0;
-while (node)
+size_t sum = 0;
+while (head != NULL)
 {
-plus += node->n;
-node = node->next;
+sum = sum + head->n;
+head = head->next;
 }
-return (plus);
+return (sum);
 }
