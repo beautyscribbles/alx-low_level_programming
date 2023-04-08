@@ -1,16 +1,23 @@
 #include "main.h"
 
 /**
- * clear_bit - A function thats the value of a bit to 0 at a given index
- * @n: A pointer to the number to modify
- * @index: The index of the bit to set, starting from 0
- *
- * Return: 1 if it worked, or -1 if an error occurred
- */
-int clear_bit(unsigned long int *n, unsigned int index)
+ * flip_bits - Returns the number of bits needed to be flipped
+ * @n: The first number to compare
+ * @m: The second number to compare
+ * Return: The number of bits needed to flip
+ * Description: Takes two unsigned long int and flips them
+*/
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-if (index >= sizeof(unsigned long int) * 8)
-return (-1);
-*n &= ~(1UL << index);
-return (1);
+unsigned long int xor_result;
+unsigned int count = 0;
+
+xor_result = n ^ m; /* XOR operation between n and m */
+while (xor_result != 0)
+{
+if (xor_result & 1) /* If the rightmost bit is 1 */
+count++;
+xor_result = xor_result >> 1; /* Shift the result to the right by one */
 }
+
+return (count);
