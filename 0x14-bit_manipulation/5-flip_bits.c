@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * flip_bits - Entry point
- * Description: Returns the number of bits that will be flipped
- * @n: Input digit
- * @m: Input digit
- *
- * Return: No of bits that will be flipped
- */
-
+ *  * flip_bits - a function that returns the number of bits.
+ *    * @n: first counted no.
+ *     * @m: second counted no.
+ *      * Return: 0 or 1
+*/
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned long int xor_op = n ^ m;
-unsigned int counter = 0;
-/*Starts counting*/
-while (xor_op)
-counter += (xor_op & 1);
-xor_op >>= 1;/*Increase the bit by 1*/
+int i, flips = 0;
+unsigned long int current;
+unsigned long int ano_num = n ^ m;
+for (i = 63; i >= 0; i--)
+{
+current = ano_num >> i;
+if (current & 1)
+flips++;
 }
-return (counter);
+return (flips);
 }
