@@ -1,8 +1,6 @@
 #ifndef MY_MAIN_H
 #define MY_MAIN_H
 
-#include <stdlib.h>
-
 /**Protype for the Bit manipulation C files
 */
 
