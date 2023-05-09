@@ -1,34 +1,45 @@
+/* Auth: Florence L. Hanson */
+
 #include "main.h"
+
 /**
- * read_textfile - text file to be read
- * @filename: the file name
- * @letters: number of letters that would be printed
- * Return: return 0 when filename is NULL
+ * read_textfile - reads a text file and prints
+ *  it to the POSIX standard output.
+ * @filename: pointer to file containing chars.
+ * @letters: letters to be read and printed.
+ *
+ * Return: number of letters it could read & print
+ *         otherwise 0.
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fildes;
-	ssize_t fn_read, fn_write;
-	char *buffer;
+	ssize_t  op, r, wr;
+	char *storage;
 
 	if (filename == NULL)
-	{
 		return (0);
-	}
-	fildes = open(filename, O_RDONLY);
 
-	if (fildes == -1)
+	storage = malloc(sizeof(char) * letters);
+	/* allocating memory */
+
+	if (storage == NULL)
+		return (0);
+	/* checking if malloc was succesful */
+
+	op = open(filename, O_RDONLY); /* opens file in read only mode*/
+	r = read(op, storage, letters);
+	wr = write(STDOUT_FILENO, storage, r);
+
+	if (op == -1 || r == -1 || wr == -1 || wr != r)
 	{
+		free(storage);
 		return (0);
 	}
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-	{
-		return (0);
-	}
-	fn_read = read(fildes, buffer, letters);
-	fn_write = write(STDOUT_FILENO, buffer, fn_read);
-	close(fildes);
-	free(buffer);
-	return (fn_write);
+
+	free(storage);
+	close(op);
+
+	return (wr);
+	/* returning bytes stored in wr.*/
 }
