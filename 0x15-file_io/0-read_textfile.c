@@ -1,45 +1,36 @@
-/* Auth: Florence L. Hanson */
-
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints
- *  it to the POSIX standard output.
- * @filename: pointer to file containing chars.
- * @letters: letters to be read and printed.
+ * read_textfile - reads a text file and prints the letters
+ * @filename: filename.
+ * @letters: numbers of letters printed.
  *
- * Return: number of letters it could read & print
- *         otherwise 0.
+ * Return: numbers of letters printed. It fails, returns 0.
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t  op, r, wr;
-	char *storage;
+	int fd;
+	ssize_t nrd, nwr;
+	char *buf;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
 
-	storage = malloc(sizeof(char) * letters);
-	/* allocating memory */
+	fd = open(filename, O_RDONLY);
 
-	if (storage == NULL)
+	if (fd == -1)
 		return (0);
-	/* checking if malloc was succesful */
 
-	op = open(filename, O_RDONLY); /* opens file in read only mode*/
-	r = read(op, storage, letters);
-	wr = write(STDOUT_FILENO, storage, r);
-
-	if (op == -1 || r == -1 || wr == -1 || wr != r)
-	{
-		free(storage);
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
 		return (0);
-	}
 
-	free(storage);
-	close(op);
+	nrd = read(fd, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
 
-	return (wr);
-	/* returning bytes stored in wr.*/
+	close(fd);
+
+	free(buf);
+
+	return (nwr);
 }
